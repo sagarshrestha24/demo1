@@ -1,7 +1,12 @@
 
 pipeline {
   agent any
-
+options {
+        timestamps()
+    }
+    triggers {
+        bitbucketPush()
+    }
   stages {
     stage('Project1') {
       when {
