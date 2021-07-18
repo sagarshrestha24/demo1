@@ -1,5 +1,4 @@
-#!/usr/bin/env groovy
-def gv
+
 pipeline {
   agent any
   stages {
@@ -10,6 +9,17 @@ pipeline {
       steps {
 	script {
 	  build 'Project1'
+	  sh "ls" 
+	}
+      }
+    }
+	  stage('Project2') {
+      when {
+        changeset "Project2/**"
+      }
+      steps {
+	script {
+	  build 'Project2'
 	  sh "ls" 
 	}
       }
