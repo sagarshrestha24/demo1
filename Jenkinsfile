@@ -8,7 +8,7 @@ pipeline {
         changeset "project1/**"
       }
       steps {
-	build 'project1'
+	build 'project1/Jenkinsfile'
       }
     }
 	  stage('Project2') {
