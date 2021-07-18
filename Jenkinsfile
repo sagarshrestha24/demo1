@@ -13,9 +13,7 @@ options {
         changeset "project1/**"
       }
       steps {
-	      script{
-	      sh "ls"
-	      }
+	      build 'project1'
 	 
       }
     }
