@@ -4,10 +4,10 @@ pipeline {
   stages {
     stage('Project1') {
       when {
-        changeset "Project1/**"
+        changeset "project1/**"
       }
       steps {
-	build 'Project1'
+	build 'project1'
       }
     }
 	  stage('Project2') {
