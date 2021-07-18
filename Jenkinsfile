@@ -9,7 +9,7 @@ pipeline {
       }
       steps {
 	build 'project1'
-	      sh "ls"
+	 
       }
     }
 	  stage('Project2') {
