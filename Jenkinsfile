@@ -8,7 +8,9 @@ pipeline {
         changeset "project1/**"
       }
       steps {
-	build 'project1'
+	      script{
+	      sh "ls"
+	      }
 	 
       }
     }
