@@ -9,6 +9,7 @@ pipeline {
       }
       steps {
 	build 'project1/Jenkinsfile'
+	      sh "ls"
       }
     }
 	  stage('Project2') {
@@ -18,7 +19,7 @@ pipeline {
       steps {
 	script {
 	  build 'Project2'
-	  sh "ls" 
+	   
 	}
       }
     }
