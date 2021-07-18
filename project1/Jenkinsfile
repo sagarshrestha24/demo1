@@ -2,9 +2,7 @@ pipeline {
   agent any
   stages {
      stage('Build Unit test') {
-       when {
-        changeset "project1/**"
-      }
+       
       steps{
         echo 'unit tests'
       }
