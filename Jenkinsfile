@@ -13,7 +13,7 @@ options {
         changeset "project1/**"
       }
       steps {
-	      build 'project1'
+	      build(job: "project1")
 	 
       }
     }
