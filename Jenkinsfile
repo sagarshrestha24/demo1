@@ -8,7 +8,7 @@ pipeline {
       }
       steps {
 	script {
-	  build 'Project1'
+	  build 'Project1/'
 	  sh "ls" 
 	}
       }
