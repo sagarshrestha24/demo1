@@ -23,6 +23,7 @@ options {
       }
       steps {
 	script {
+	sh 'cd Project2'	
 	  build 'Project2'
 	   
 	}
