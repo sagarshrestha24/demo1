@@ -7,10 +7,7 @@ pipeline {
         changeset "Project1/**"
       }
       steps {
-	script {
-	  build 'Project1/'
-	  sh "ls" 
-	}
+	build 'Project1'
       }
     }
 	  stage('Project2') {
