@@ -31,7 +31,7 @@ options {
 	  stage('Deploy') {
 		  
   when { 
-	  branch 'main';
+	  
 	  expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) }
   }
   steps {
