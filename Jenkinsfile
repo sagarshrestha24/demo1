@@ -29,5 +29,11 @@ options {
 	}
       }
     }
+	  stage('Deploy') {
+  when { expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) } }
+  steps {
+    echo 'Replace this with your actual deployment steps'
+  }
+}
   }
 }
