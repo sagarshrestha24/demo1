@@ -13,8 +13,7 @@ options {
         changeset "project1/**"
       }
       steps {
-	       build 'project1'
-	 
+	       build '/git-job/project1'
       }
     }
 	  stage('Project2') {
