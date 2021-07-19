@@ -1,19 +1,43 @@
+#!/usr/bin/env groovy
 pipeline {
-  environment {
-    registry = "akanshagiriya/demo"
-    registryCredential = 'Docker_cred'
-  }
   agent any
+options {
+        timestamps()
+    }
+    triggers {
+        bitbucketPush()
+    }
   stages {
-    stage('Cloning Git') {
+    stage('Project1') {
+      when {
+        changeset "project1/**"
+      }
       steps {
-          git branch: 'main', url: 'https://github.com/sk-sharif/demo1.git'
+	       build(job: "project1", parameters: [[$class: 'StringParameterValue', name: 'param1' ]])
+	 
       }
     }
-     stage('Build Unit test') {
-      steps{
-        echo 'unit tests'
+	  stage('Project2') {
+      when {
+        changeset "Project2/**"
+      }
+      steps {
+	script {
+		
+	  build 'Project2'
+	   
+	}
       }
     }
+	  stage('Deploy') {
+		  
+  when { 
+	  branch 'main';
+	  expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) }
+  }
+  steps {
+    echo 'Replace this with your actual deployment steps'
+  }
+}
   }
 }
