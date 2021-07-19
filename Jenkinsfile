@@ -32,7 +32,7 @@ options {
 		  
   when { 
 	 
-	  branch 'main' && expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) }
+	  branch 'main'; && expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) }
 	 
   }
   steps {
