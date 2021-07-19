@@ -13,7 +13,7 @@ options {
         changeset "project1/**"
       }
       steps {
-	      build '/var/jenkins_home/workspace/etl_main/project1'
+	      def job = build job: 'project1'
 	 
       }
     }
