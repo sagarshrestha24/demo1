@@ -13,7 +13,7 @@ options {
         changeset "project1/**"
       }
       steps {
-	      def job = build job: 'project1'
+	       build(job: 'project1')
 	 
       }
     }
