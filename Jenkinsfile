@@ -1,19 +1,15 @@
 #!/usr/bin/env groovy
+@Library('shared-library') _
 pipeline {
   agent any
-options {
-        timestamps()
-    }
-    triggers {
-        bitbucketPush()
-    }
+
   stages {
     stage('Project1') {
       when {
         changeset "project1/**"
       }
       steps {
-	       build '/git-job/project1'
+	       Test()
       }
     }
 	  stage('Project2') {
