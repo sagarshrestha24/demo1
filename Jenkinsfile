@@ -5,9 +5,9 @@ pipeline {
 
   stages {
     stage('Project1') {
-      when {
-        changeset "project1/**"
-      }
+//       when {
+//         changeset "project1/**"
+//       }
       steps {
 	       Test()
       }
